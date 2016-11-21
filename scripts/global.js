@@ -153,11 +153,11 @@ function prepareInternalnav() {
   var nav = navs[0];
   var links = nav.getElementsByTagName("a");
   for (var i = 0; i < links.length; i++) {
-    var sectionID = links[i].getAttribute("href").split("#")[i];
+    var sectionID = links[i].getAttribute("href").split("#")[1];
     if (!document.getElementById(sectionID)) continue;
     document.getElementById(sectionID).style.display = "none";
     links[i].destination = sectionID;
-    links[i].onlick = function () {
+    links[i].onclick = function () {
       showSection(this.destination);
       return false;
     }
